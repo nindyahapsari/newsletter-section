@@ -62,9 +62,9 @@ export default function Home() {
   };
 
   return (
-    <div className="">
+    <div>
       {successMessage && (
-        <div className="absolute top-32 left-1/3 rounded-2xl px-3 py-1 bg-green-100 flex flex-row gap-2 justify-center">
+        <div className="absolute  rounded-2xl mx-4 px-4 py-2 bg-green-100 flex flex-row gap-2 justify-center tablet:left-20 desktop:top-20 desktop:left-1/3">
           <span className="my-auto">
             <div className="rounded-lg text-green-700 text-sm px-2 bg-white">
               Success
@@ -75,7 +75,7 @@ export default function Home() {
       )}
 
       {errorMessage && (
-        <div className="absolute top-32 left-1/3 rounded-2xl px-3 py-1 bg-red-100 flex flex-row gap-2 justify-center">
+        <div className="absolute rounded-2xl mx-4 px-4 py-2 bg-red-100 flex flex-row gap-2 justify-center tablet:left-20 desktop:top-20 desktop:left-1/3">
           <span className="my-auto">
             <div className="rounded-lg text-red-600 text-sm px-2 bg-white">
               Error
@@ -85,19 +85,19 @@ export default function Home() {
         </div>
       )}
 
-      <div className="h-screen flex flex-col desktop:flex-row justify-center items-center">
+      <div className="h-screen flex flex-col my-12 desktop:justify-center desktop:items-center desktop:flex-row ">
         <div className="desktop:w-1/3">
-          <div className="px-10">
-            <h1 className="text-5xl font-bold mb-10 leading-tight">
+          <div className="px-4">
+            <h1 className="text-4xl font-bold mb-8 leading-tight tablet:text-5xl desktop:text-6xl ">
               Get the finest curated abstracts delivered weekly to your inbox
             </h1>
             <ul className="text-lg">
-              <li className="my-5 flex flex-row gap-2">
+              <li className="my-4 flex flex-row gap-4">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="#4e03fc"
+                    fill="#4338ca"
                     className="size-5"
                   >
                     <path
@@ -114,7 +114,7 @@ export default function Home() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="#4e03fc"
+                    fill="#4338ca"
                     className="size-5"
                   >
                     <path
@@ -131,7 +131,7 @@ export default function Home() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="#4e03fc"
+                    fill="#4338ca"
                     className="size-5"
                   >
                     <path
@@ -146,15 +146,15 @@ export default function Home() {
             </ul>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="my-5 px-2 flex flex-col items-center tablet:px-10 desktop:px-10 desktop:items-start">
-              <div className="flex flex-col gap-2 items-center desktop:flex-row desktop:w-full">
+            <div className="my-4 px-4 flex flex-col items-center tablet:items-start desktop:px-8 desktop:items-start">
+              <div className="flex flex-col w-screen px-4 tablet:px-0 items-center tablet:flex-row desktop:flex-row desktop:w-full desktop:gap-4 desktop:px-0">
                 <input
                   type="text"
                   placeholder="Enter you email"
-                  className="input input-bordered w-screen desktop:w-full "
+                  className="input input-bordered w-full tablet:w-3/6 desktop:w-full "
                   {...register("email", { required: true })}
                 />
-                <button className="btn btn-primary w-full desktop:w-32 my-2">
+                <button className="btn bg-indigo-700 text-white border-none w-full my-4 tablet:w-32 tablet:mx-4 desktop:w-32 ">
                   Subscribe
                 </button>
                 {errors.email?.type === "invalid_string" && (
@@ -163,7 +163,7 @@ export default function Home() {
                   </p>
                 )}
               </div>
-              <p className="my-5">We only send you the best! No spam.</p>
+              <p className="my-4">We only send you the best! No spam.</p>
             </div>
           </form>
         </div>
