@@ -51,7 +51,8 @@ In this project, I developed a responsive newsletter subscription form based on 
 
 ## Screenshots
 
-_Include screenshots here_
+![newsletter-section-screenshot](https://github.com/user-attachments/assets/36f3ae97-4e09-4517-80aa-c79f5f102772)
+
 
 ## How to Run
 
