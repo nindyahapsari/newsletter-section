@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
@@ -24,7 +24,6 @@ export default function Home() {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm<InputEmail>({
@@ -56,7 +55,11 @@ export default function Home() {
 
       sendUserEmail();
     } catch (errors) {
-      setErrorMessage(errors.message);
+      if (errors instanceof Error) {
+        setErrorMessage(errors.message);
+      }
+
+      setErrorMessage("An error occurred. Please try again later.");
     }
   }, [userEmail]);
 

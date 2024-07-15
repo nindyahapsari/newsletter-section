@@ -1,7 +1,28 @@
 import Image from "next/image";
-import { SubmitHandler } from "react-hook-form";
+import {
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+  FieldErrors,
+} from "react-hook-form";
 
-export default function Hero({ onSubmit, handleSubmit, register, errors }) {
+type FormValues = {
+  email: string;
+};
+
+type HeroProps = {
+  onSubmit: SubmitHandler<FormValues>;
+  handleSubmit: UseFormHandleSubmit<FormValues>;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+};
+
+export default function Hero({
+  onSubmit,
+  handleSubmit,
+  register,
+  errors,
+}: HeroProps) {
   return (
     <div className="h-screen flex flex-col my-12 desktop:justify-center desktop:items-center desktop:flex-row ">
       <div className="desktop:w-1/3">
